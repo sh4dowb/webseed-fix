@@ -14,7 +14,12 @@ pip3 install bencoder
 then,
 ```
 python3 webseed-fix.py [torrentfile] [filename] [httplink]
+
+example:
+python3 webseed-fix.py something.torrent Something.S01E01.mp4 http://example.com/data/Something.S01E01.mp4
 ```
+
+(http filename can be anything, but local filename must match the one in torrent)
 
 Note that if torrent has multiple files, a small part of the file will _probably_ always be downloaded. Because, if filesize doesn't meet chunk size, let's say 1 MB chunk size and 10.5 MB files, first 10 pieces are for the first file, and 11th piece is for both 1st and 2nd file. In that case we (might) not verify it because we don't have the other file, so we make sure by downloading these impossible to verify parts.
 
